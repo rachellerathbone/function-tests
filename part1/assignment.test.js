@@ -1138,6 +1138,94 @@ window.onload = function() {
     });
   });
 
+  suite('businessNamesAndRatings', function() {
+    test('returns the business name and rating', function() {
+      assert.deepEqual(businessNamesAndRatings({ businesses: [], total: 0 }), []);
+      assert.deepEqual(businessNamesAndRatings(YELP_API_RESULT), [
+        {
+          "name": "Radiator Whiskey",
+          "rating": 4.5
+        },
+        {
+          "name": "Woodinville Whiskey Company",
+          "rating": 4.5
+        },
+        {
+          "name": "The Whisky Bar",
+          "rating": 4
+        },
+        {
+          "name": "Canon",
+          "rating": 4
+        },
+        {
+          "name": "The Barrel Thief",
+          "rating": 4
+        },
+        {
+          "name": "Bathtub Gin & Co",
+          "rating": 4
+        },
+        {
+          "name": "The Zig Zag Café",
+          "rating": 4.5
+        },
+        {
+          "name": "Needle and Thread",
+          "rating": 4
+        },
+        {
+          "name": "Knee High Stocking Co.",
+          "rating": 4
+        },
+        {
+          "name": "Rob Roy",
+          "rating": 4
+        },
+        {
+          "name": "Liberty",
+          "rating": 4
+        },
+        {
+          "name": "Bookstore Bar & Café",
+          "rating": 3.5
+        },
+        {
+          "name": "Kickin' Boot Whiskey Kitchen",
+          "rating": 3.5
+        },
+        {
+          "name": "Sun Liquor",
+          "rating": 4.5
+        },
+        {
+          "name": "Sun Liquor Distillery",
+          "rating": 4
+        },
+        {
+          "name": "Quinn's",
+          "rating": 4
+        },
+        {
+          "name": "Brouwer's Cafe",
+          "rating": 4
+        },
+        {
+          "name": "Montana",
+          "rating": 4
+        },
+        {
+          "name": "Macleod's Fish & Chips Scottish Pub",
+          "rating": 4
+        },
+        {
+          "name": "Witness",
+          "rating": 4.5
+        }
+      ]);
+    })
+  });
+
   suite('averageRating', function() {
     test('returns the average rating of yelp businesses in the API response', function() {
       assert.strictEqual(averageRating({ businesses: [], total: 0 }), null);
